@@ -1,4 +1,4 @@
-# web-request-result
+# Processador de formatos de requisições
 Projeto em C# que trata formatos de requisições, utilizando o Design Pattern Chains of Responsability
 
 Neste exemplo, precisamos tratar um retorno de uma requisição. Para evitar o uso de vários "ifs" (lembrando que poderia ser algo muito maior), estamos usando a cadeia de responsabilidades. Primeiro verificamos se a requisição é do tipo Xml. Caso seja, retorna um resultado XML que será apresentado na tela. Senão, a classe **XmlFormat** irá delegar a execução para a próxima classe, a **CsvFormat** e assim sucessivamente, de acordo com o que foi configurado na classe **RequestProcessor**. Por isto o nome "Chains of Responsability", cada classe se liga com outra formando uma cadeia e com cada uma funcionando de forma independente, concentrando apenas suas regras de responsabilidade. Tudo isso irá acarretar em um código mais limpo e de mais fácil manutenção.
